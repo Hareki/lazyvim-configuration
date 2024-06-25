@@ -1,4 +1,3 @@
--- -- actutate
 return {
   {
     "neoclide/coc.nvim",
