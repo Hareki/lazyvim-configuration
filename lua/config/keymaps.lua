@@ -5,6 +5,7 @@
 vim.g.mapleader = " "
 
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
 map("i", "jk", "<Esc>", { noremap = true, desc = "Map jk to Esc in insert mode", silent = true })
 
@@ -16,4 +17,7 @@ map("x", "x", '"0d', { noremap = true, desc = "Cut to register 0", silent = true
 map({ "x" }, "<leader>y", '"+y', { noremap = true, desc = "Yank to system clipboard", silent = true })
 map({ "n", "x" }, "<leader>p", '"+p', { noremap = true, desc = "Paste from system clipboard", silent = true })
 
-map({ "n", "v" }, "<A-s>", ":w<CR>", { noremap = true, desc = "Save file", silent = true })
+-- For some reason the file is saved twice if I don't do this
+-- Note for myslef: the output of saving file is routed to the "mini" view by noice.nvim
+unmap({ "i", "x", "n", "s" }, "<C-s>")
+map({ "i", "x", "n", "s" }, "<A-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
