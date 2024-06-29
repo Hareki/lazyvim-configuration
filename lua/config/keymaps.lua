@@ -18,6 +18,7 @@ map({ "x" }, "<leader>y", '"+y', { noremap = true, desc = "Yank to system clipbo
 map({ "n", "x" }, "<leader>p", '"+p', { noremap = true, desc = "Paste from system clipboard", silent = true })
 
 -- For some reason the file is saved twice if I don't do this
--- Note for myslef: the output of saving file is routed to the "mini" view by noice.nvim
+-- Note for myself: the output of saving file is routed to the "mini" view by noice.nvim
 unmap({ "i", "x", "n", "s" }, "<C-s>")
 map({ "i", "x", "n", "s" }, "<A-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<A-a>", "<cmd>wa<cr><esc>", { desc = "Save File" })
