@@ -22,3 +22,5 @@ map({ "n", "x" }, "<leader>p", '"+p', { noremap = true, desc = "Paste from syste
 unmap({ "i", "x", "n", "s" }, "<C-s>")
 map({ "i", "x", "n", "s" }, "<A-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map({ "i", "x", "n", "s" }, "<A-a>", "<cmd>wa<cr><esc>", { desc = "Save File" })
+
+-- map({ "x", "n", "s" }, "gh", "<cmd>ShowDiagnosticsPopup<cr><esc>", { desc = "Show Diagnostics Popup" })

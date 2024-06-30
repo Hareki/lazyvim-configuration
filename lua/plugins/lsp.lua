@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+
 return {
   {
     "neoclide/coc.nvim",
@@ -6,6 +7,10 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    event = {
+      "InsertEnter",
+      "CmdlineEnter",
+    },
     dependencies = {
       "hrsh7th/cmp-cmdline",
       -- "dmitmel/cmp-cmdline-history",
@@ -15,6 +20,14 @@ return {
         ["<A-j>"] = cmp.mapping.select_next_item(),
         ["<A-k>"] = cmp.mapping.select_prev_item(),
       }),
+      window = {
+        completion = {
+          border = "none",
+        },
+        documentation = {
+          border = "rounded",
+        },
+      },
     },
     init = function()
       -- `/` cmdline setup.
@@ -40,6 +53,15 @@ return {
           },
         }),
       })
+    end,
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      opts.diagnostics.virtual_text = false
+      opts.inlay_hints.enabled = false
+      opts.codelens.enabled = false
     end,
   },
 }
