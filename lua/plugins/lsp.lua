@@ -5,6 +5,9 @@ return {
     "neoclide/coc.nvim",
     branch = "release",
   },
+
+  --
+
   {
     "hrsh7th/nvim-cmp",
     event = {
@@ -55,6 +58,8 @@ return {
       })
     end,
   },
+
+  --
 
   {
     "neovim/nvim-lspconfig",
