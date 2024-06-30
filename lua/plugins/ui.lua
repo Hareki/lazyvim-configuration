@@ -50,6 +50,11 @@ return {
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
+    opts = {
+      options = {
+        separator_style = "slant",
+      },
+    },
     keys = {
       { "<A-S-h>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
       { "<A-S-l>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },

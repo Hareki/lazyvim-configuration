@@ -28,7 +28,7 @@ return {
           border = "none",
         },
         documentation = {
-          border = "rounded",
+          border = "none",
         },
       },
     },
