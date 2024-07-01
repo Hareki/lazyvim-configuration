@@ -57,14 +57,7 @@ return {
       preview_window = false,
       title = true,
     })
-  end,
 
-  keys = {
-    {
-      "gh",
-      "<cmd>lua require('hover').hover()<cr>",
-      mode = "n",
-      desc = name,
-    },
-  },
+    vim.keymap.set("n", "gh", hover.hover, { desc = name })
+  end,
 }
